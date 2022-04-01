@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+}
+.body {
+  /* width: 100%;
+    height: 100vh; */
+  overflow: hidden;
+}
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 4px;
+  /* width: calc(100% - 15px); */
+  /* SCROLL BAR UNCOVERED BY THIS MANIPULATED WIDTH */
+  background: black;
+  color: white;
+  font-size: 0.5rem;
+  z-index: 1;
+}
+@media (max-width: 850px) {
+  header {
+    width: 100%;
+  }
+}
+header div {
+  /* border: 1px dashed red; */
+  padding-left: 4vw;
+}
+.container {
+  position: relative;
+  top: -20px;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+.item {
+  scroll-snap-align: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  gap: 3px;
+  /* padding-top: 0rem; */
+  /* padding; 10vh; */
+  justify-content: center;
+  align-items: center;
+}
+.item:nth-child(odd) {
+  background-color: lightgrey;
+}
+.item:nth-child(even) {
+  background-color: white;
+}
+#page-1 {
+  display: flex;
+  flex-direction: column;
+}
+#page-1 .title {
+  font-size: 1rem;
+  width: calc(100vw * 0.8);
+  padding: 5px 5%;
+  color: white;
+  background: black;
+  /* border: 1px dashed red; */
+  border-bottom: 2px solid white;
+  border-radius: 6px 6px 0 0;
+  /* box-shadow: 10px 10px 20px black; */
+}
+.item .bgImg {
+  position: relative;
+  height: calc(52.6vw * 0.81);
+  /* height is calculated from x-y dimension of original image source. */
+  width: calc(100vw * 0.8);
+  border-radius: 0 0 6px 6px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border: 1px solid lightgrey;
+  
+}
+
+.blackShadow {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8), 0px 0px 30px rgba(0, 0, 0, 0.6),
+  0px 0px 60px rgba(0, 0, 0, 0.4), 0px 0px 80px rgba(0, 0, 0, 0.2);
+}
+.item .bgImg img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+@media (max-width: 670px) {
+  .item .bgImg {
+    height: 60vh;
+    overflow-x: scroll;
+  }
+}
+@media (max-height: 450px) {
+  .item .bgImg {
+    height: 60vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .item .bgImg img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+.footer-btn {
+  position: absolute;
+  bottom: calc(-100vh * var(--i) + 5vh);
+  right: 2vh;
+  transition: 0.5s;
+  z-index: 100;
+  /* border: 1px dashed green; */
+}
+.footer-btn a {
+  font-size: 0.6rem;
+  /* border: 1px dashed blue;  */
+}
+.footer-btn a i {
+  font-size: 0.6rem;
+}
+.footer-btn a img {
+  position: relative;
+  top: 0.3rem;
+  width: 1rem;
+  /* border: 1px dashed red; */
+}
+.footer-btn:hover {
+  letter-spacing: 1px;
+  background: black;
+  /* animation: vibratingY 1s linear forwards; */
+}
+/* @keyframes vibratingY {
+    0% {
+        transform: translateY(3px);
+    }
+    33% {
+        transform: translateY(0px);
+    }
+    66% {
+        transform: translateY(3px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+} */
+#page-7 .footer-btn a,
+#page-5 .footer-btn a,
+#page-3 .footer-btn a,
+#page-1 .footer-btn a {
+  text-decoration: none;
+  color: white;
+}
+#page-8 .footer-btn a,
+#page-6 .footer-btn a,
+#page-4 .footer-btn a,
+#page-2 .footer-btn a {
+  text-decoration: none;
+  color: lightgray;
+}
+
+
+.coordinate-system {
+  position: absolute;
+  top: 0;
+  border: 1px dashed crimson;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
+.cartesianCoord {
+  /* border: 3px solid cornflowerblue; */
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10%, auto));
+
+}
+.cell-unit {
+  opacity: 0.5;
+  height: 10vh;
+  /* aspect-ratio: 1/1; */
+  border: 0.2px dashed cornflowerblue;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.label {
+  font-size: 1em;
+  position: absolute;
+  /* border-bottom: 3px solid black; */
+  /* border-right: 3px solid black; */
+}
+.marker {
+  height: 0;
+  width: 0;
+  border-top: 0px solid black;
+  border-bottom: 15px solid black;
+  border-left: 15px solid transparent;
+}
+.colored {
+  background: powderblue;
+}
